@@ -1,0 +1,804 @@
+/* Reset básico */ /*  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Neuton';
+    src: url('/GMLawFirm/source/Fonts/Neuton-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Neuton';
+    src: url('/GMLawFirm/source/Fonts/Neuton-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Neuton', sans-serif;
+}
+/* Nav Bar */
+header {
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0); /* Transparente */
+    padding: 1rem 2rem;
+    position: relative; /* Adiciona o posicionamento relativo */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 3.86rem;
+}
+
+.logo-text img {
+    height: 2.1rem;
+    margin-left: 1rem;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 1.5rem;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.27rem;
+    text-shadow:
+        2px 2px 4px rgba(0, 0, 0, 0.7), /* Sombra original */
+        0 0 3px #072038, /* Contorno #072038 */
+        0 0 5px #072038; /* Contorno #072038 */
+}
+
+.nav-links a:hover {
+    text-shadow:
+        2px 2px 4px rgba(0, 0, 0, 0.7), /* Sombra original */
+        0 0 3px #072038, /* Contorno #072038 */
+        0 0 5px #072038; /* Contorno #072038 */
+}
+
+.contact-button {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: #ffffff; /* Fundo branco */
+    color: #072038; /* Cor da fonte */
+    text-decoration: none;
+    border-radius: 5px;
+    border: 2px solid #072038; /* Borda da cor #2c3e50 */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave */
+}
+
+.contact-button:hover {
+    background-color: #072038; /* Fundo da cor #2c3e50 ao passar o mouse */
+    color: #ffffff; /* Cor da fonte branca ao passar o mouse */
+}
+
+
+.contact-button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 24px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute; /* Posiciona o botão de hambúrguer */
+    right: 2rem; /* Mantém à direita */
+    margin-top: 1rem;
+}
+
+.nav-toggle .hamburger,
+.nav-toggle .hamburger::before,
+.nav-toggle .hamburger::after {
+    content: '';
+    width: 24px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: all 0.3s linear;
+}
+
+.nav-toggle .hamburger::before,
+.nav-toggle .hamburger::after {
+    position: absolute;
+}
+
+.nav-toggle .hamburger::before {
+    transform: translateY(-8px);
+}
+
+.nav-toggle .hamburger::after {
+    transform: translateY(8px);
+}
+
+@media (max-width: 1230px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #072038;
+        position: absolute;
+        top: 5.5rem;
+        left: 0;
+        border-radius: 8px; /* Adiciona bordas arredondadas */
+    }
+    
+    .nav-links li {
+        margin: 1rem 0;
+        text-align: center;
+    }
+    
+    .nav-links a {
+        font-weight: bold; /* Torna o texto em negrito */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adiciona sombra ao texto */
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .contact-button {
+        margin-right: 3rem;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column; /* Muda a direção dos itens no navbar */
+        align-items: flex-start; /* Alinha os itens no início */
+    }
+
+    .nav-toggle {
+        position: absolute; /* Garante que o botão de hambúrguer fique na mesma linha que o logo */
+        right: 2rem; /* Mantém à direita */
+        top: 1rem; /* Alinha com a parte superior */
+    }
+
+    .contact-button {
+        width: 100%; /* Faz o botão ocupar toda a largura */
+        justify-content: center;
+        padding: 1rem 2rem; /* Aumenta o tamanho do botão */
+        font-size: 1.2rem; /* Aumenta o tamanho do texto */
+        margin-top: 1rem;
+        order: 3; /* Define a ordem do botão de contato */
+    }
+
+    .contact-button img {
+        width: 24px; /* Aumenta o tamanho da imagem do ícone */
+        height: 24px; /* Aumenta o tamanho da imagem do ícone */
+    }
+
+    .logo-container {
+        order: 2; /* Define a ordem do logo */
+        width: 100%; /* O logo ocupa toda a largura */
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-links {
+        top: 65.5px; /* Ajusta a posição dos links de navegação para evitar sobreposição */
+    }
+
+    .logo-text img {
+        margin-left: 0rem;
+    }
+}
+
+
+
+@media (min-width: 600px) and (max-width: 1230px) {
+    .nav-links {
+        width: 24%; /* O menu ocupa 30% da largura */
+        right: 0; /* Posiciona o menu à direita */
+        left: auto; /* Remove qualquer posicionamento à esquerda */
+        top: 5.5rem; /* Ajusta a posição superior se necessário */
+    }
+
+    .nav-links.open {
+        position: absolute; /* Garante que o menu seja posicionado absolutamente */
+        display: flex; /* Mantém o display flex */
+        flex-direction: column; /* Coloca os itens em coluna */
+        background-color: #072038; /* Mantém a cor de fundo */
+        border-radius: 8px; /* Mantém as bordas arredondadas */
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+}
+
+
+.nav-links.open {
+    display: flex;
+}
+
+
+/* Hero */
+.hero {
+    background: url('/GMLawFirm/source/Images/HEROBACKGROUND.jpg') no-repeat center center/cover;
+    height: 80vh; /* Ajuste a altura para 80% */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    padding-top: 60px; /* Espaço para a nav bar fixa */
+}
+
+.hero-content {
+    background: rgba(255, 255, 255, 0.2); /* Fundo semi-transparente para o efeito de vidro */
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    backdrop-filter: blur(10px); /* Desfoque para o efeito de vidro */
+    -webkit-backdrop-filter: blur(10px); /* Compatibilidade com Safari */
+    color: #ffffff; /* Cor do texto branca */
+    z-index: 1; /* Certifique-se de que o elemento esteja acima dos outros */
+    position: relative; /* Posicionamento relativo para o z-index funcionar */
+}
+
+.hero-content h1{
+    font-size: 2.25rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra preta com opacidade */
+}
+
+.hero-content p {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra preta com opacidade */
+}
+
+section {
+    padding: 4rem 2rem;
+    min-height: 40vh; /* Cada seção ocupará no min 40% da altura da viewport */
+}
+
+
+/* About the office */
+#about {
+    background: #f9f9f9;
+    padding: 4rem 2rem;
+}
+
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.slideshow-container {
+    position: relative;
+    flex: 1;
+    min-width: 300px; /* largura mínima para imagens */
+}
+
+.slideshow {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.slides {
+    display: none;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.slideshow .slides:first-child {
+    display: block;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all 0.6s ease;
+    border-radius: 3px;
+    user-select: none;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.text-container {
+    flex: 1;
+    min-width: 300px; /* largura mínima para o container de texto */
+}
+
+.text-card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title-about {
+    margin-bottom: 1rem;
+    font-size: 2.15rem;
+}
+
+.text-about {
+    margin-top: 0;
+    font-size: 1.35rem;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+    }
+
+    .slideshow-container, .text-container {
+        max-width: 100%;
+    }
+
+    .slides {
+        width: 100%;
+    }
+
+    .prev, .next {
+        top: 50%;
+        font-size: 24px;
+    }
+
+    .title-about {
+        font-size: 1.5rem;
+    }
+
+    .text-about {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .title-about {
+        font-size: 1.25rem;
+    }
+
+    .text-about {
+        font-size: 0.875rem;
+    }
+}
+
+/* Commitment */
+#commitment {
+    background: #f9f9f9;
+    padding: 4rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.commitment-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    gap: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.text-content {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 2 1 600px;
+}
+
+.title-commitment {
+    margin-bottom: 1rem;
+    font-size: 2.15rem;
+    font-weight: bold;
+}
+
+.text-commitment {
+    margin-bottom: 1rem;
+    font-size: 1.35rem;
+    /*line-height: 1.5;*/
+}
+
+.image-content {
+    flex: 1 1 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-content img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .text-content, .image-content {
+        flex: 1 1 100%;
+    }
+
+    .text-content {
+        order: 2; /* O texto ficará abaixo da imagem em dispositivos móveis */
+    }
+
+    .image-content {
+        order: 1; /* A imagem ficará acima do texto em dispositivos móveis */
+    }
+}
+
+/* Services */
+/* Estilo da seção de serviços */
+#services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: #f9f9f9; /* Cor de fundo suave */
+}
+
+.service {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 80%;
+    margin: 2rem 0;
+    padding: 2rem;
+    background-color: #fff; /* Cor de fundo branco para os serviços */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+.service-icon {
+    width: 100px; /* Ajuste conforme necessário */
+    height: 100px; /* Ajuste conforme necessário */
+    border-radius: 50%; /* Deixa o contêiner redondo */
+    overflow: hidden; /* Garante que a imagem não ultrapasse os limites do contêiner */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-icon img {
+    width: auto;
+    height: 100%; /* Garante que a altura da imagem ocupe todo o contêiner */
+    object-fit: cover; /* Ajusta a imagem dentro do contêiner sem distorcer */
+}
+
+.service-content {
+    flex: 1;
+}
+
+.service-content h2 {
+    margin-bottom: 1rem;
+    font-size: 2.15rem;
+}
+
+.service-content p {
+    font-size: 1.35rem;
+    line-height: 1.5;
+}
+
+/* Divisores criativos */
+.divider {
+    width: 60%;
+    height: 4px;
+    background: linear-gradient(to right, #32e9d4, #e94e32);
+    margin: 1rem 0;
+    border-radius: 2px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .service {
+        flex-direction: column; /* Coloca os elementos em coluna em telas menores */
+        text-align: center;
+    }
+
+    .service-icon img {
+        margin-right: 0rem;
+    }
+}
+
+@media (min-width:768px) {
+    .service-icon{
+        margin-right: 2rem;
+    }
+}
+    
+
+/* Atividades */
+
+#activities {
+    text-align: center;
+    padding: 2rem 1rem;
+    height: 135vh;
+    background: linear-gradient(to bottom, #f9f9f9, #072038); /* Gradiente de branco para azul marinho */
+}
+
+.activities-title {
+    padding: 0.5rem;
+    font-size: 2.15rem;
+}
+
+.activities-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.activity-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    flex: 1 1 calc(50% - 1rem);
+    max-width: calc(50% - 1rem);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 1rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.activity-card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(44, 62, 80, 0.2)); /* Gradiente sutil de branco para azul marinho */
+    z-index: -1;
+}
+
+.activity-card img {
+    width: 40px; /* Ajusta o tamanho da imagem do ícone */
+    height: 40px; /* Ajusta o tamanho da imagem do ícone */
+    margin-bottom: 0.15rem;
+}
+
+.activity-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.activity-card ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.activity-card li {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.activity-card li img {
+    margin-right: 0.5rem;
+    width: 16px; /* Ajusta o tamanho da imagem do ícone dentro dos bullet points */
+    height: 16px; /* Ajusta o tamanho da imagem do ícone dentro dos bullet points */
+}
+
+.activity-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 900px) {
+    .activity-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+    #activities {
+        height: 212vh;
+    }
+}
+/* Advogados */
+#lawyers {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: linear-gradient(to bottom, #072038, #f9f9f9);
+}
+
+.advogados-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    perspective: 1000px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    width: calc(30% - 2rem);
+    margin: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+}
+
+.card h3, .card p {
+    margin: 0.5rem 0;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 1000px) {
+    .card {
+        width: 100%;
+        transform: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+}
+
+#lawyers h2 {
+    color: #ffffff;
+    font-size: 2.15rem;
+}
+
+/* Footer */
+#footer {
+    background-color: #072038;
+    color: #fff;
+    padding: 2rem 1rem;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.footer-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer-logo {
+    flex: 1 1 6rem;
+    margin: 1rem;
+    font-size: 1.2rem;
+}
+
+.footer-logo img {
+    height: 6rem;
+}
+
+.footer-social {
+    flex: 1 1 2.5rem;
+    margin: 1rem;
+}
+
+.footer-social h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+}
+
+.footer-social a {
+    margin: 0 0.5rem;
+    display: inline-block;
+}
+
+.footer-social img {
+    height: 3.5rem;
+}
+
+.footer-contact {
+    flex: 1 1 4rem;
+    margin: 1rem;
+}
+
+.footer-contact h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+}
+
+.footer-contact p {
+    font-size: 1.5rem;
+}
+
+.footer-bottom {
+    background-color: #1a252f;
+    padding: 1rem;
+    margin-top: 2rem;
+    color: #ddd;
+    width: 100%;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .footer-main {
+        flex-direction: column;
+    }
+
+    .footer-logo, .footer-social, .footer-contact {
+        text-align: center;
+        flex: 1 1 100%;
+    }
+}
+
+/* Botão WPP Fixo */
+
+.fixed-button {
+    position: fixed;
+    bottom: 20px; /* Ajuste conforme necessário */
+    right: 20px; /* Ajuste conforme necessário */
+    z-index: 1000; /* Garante que o botão fique acima de outros elementos */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fixed-button img {
+    width: 50px; /* Ajuste o tamanho conforme necessário */
+    height: 50px; /* Ajuste o tamanho conforme necessário */
+    border-radius: 50%; /* Deixa o botão redondo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve */
+    transition: transform 0.3s ease; /* Adiciona uma transição suave */
+}
+
+.fixed-button img:hover {
+    transform: scale(1.1); /* Aumenta o botão ligeiramente ao passar o mouse */
+}
