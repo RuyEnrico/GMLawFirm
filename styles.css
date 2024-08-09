@@ -282,7 +282,7 @@ header {
 
 section {
     padding: 4rem 2rem;
-    min-height: 40vh; /* Cada seção ocupará no min 40% da altura da viewport */
+    min-height: 60vh; /* Cada seção ocupará no min 40% da altura da viewport */
 }
 
 
@@ -371,6 +371,8 @@ section {
 .text-about {
     margin-top: 0;
     font-size: 1.35rem;
+    word-spacing: 2px;
+    font: "/GMLawFirm/source/Fonts/Neuton-Regular.ttf";
 }
 
 /* Responsivo */
@@ -393,21 +395,21 @@ section {
     }
 
     .title-about {
-        font-size: 1.5rem;
+        font-size: 1..7rem;
     }
 
     .text-about {
-        font-size: 1rem;
+        font-size: 1.3rem;
     }
 }
 
 @media (max-width: 480px) {
     .title-about {
-        font-size: 1.25rem;
+        font-size: 1.7rem;
     }
 
     .text-about {
-        font-size: 0.875rem;
+        font-size: 1.3rem;
     }
 }
 
@@ -448,7 +450,15 @@ section {
 .text-commitment {
     margin-bottom: 1rem;
     font-size: 1.35rem;
-    /*line-height: 1.5;*/
+    word-spacing: 2px;
+    font: "/GMLawFirm/source/Fonts/Neuton-Regular.ttf";
+}
+
+.text-commitment p {
+    margin-bottom: 1rem;
+    font-size: 1.35rem;
+    word-spacing: 2px;
+    font: "/GMLawFirm/source/Fonts/Neuton-Regular.ttf";
 }
 
 .image-content {
@@ -476,6 +486,17 @@ section {
 
     .image-content {
         order: 1; /* A imagem ficará acima do texto em dispositivos móveis */
+    }
+
+    .title-commitment {
+        margin-bottom: 1rem;
+        font-size: 1.7rem;
+        font-weight: bold;
+    }
+
+    .text-commitment {
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
     }
 }
 
@@ -524,11 +545,11 @@ section {
 .service-content h2 {
     margin-bottom: 1rem;
     font-size: 2.15rem;
+    font-weight: bold;
 }
 
 .service-content p {
     font-size: 1.35rem;
-    line-height: 1.5;
 }
 
 /* Divisores criativos */
@@ -550,6 +571,18 @@ section {
     .service-icon img {
         margin-right: 0rem;
     }
+
+    .service-content h2 {
+        margin-bottom: 1rem;
+        font-size: 1.7rem;
+    }
+    
+    .service-content p {
+        font-size: 1.3rem;
+    }
+    
+
+
 }
 
 @media (min-width:768px) {
@@ -564,8 +597,9 @@ section {
 #activities {
     text-align: center;
     padding: 2rem 1rem;
-    height: 135vh;
+    height: 175vh;
     background: linear-gradient(to bottom, #f9f9f9, #072038); /* Gradiente de branco para azul marinho */
+    overflow-y: auto; /* Adiciona rolagem vertical */
 }
 
 .activities-title {
@@ -626,6 +660,7 @@ section {
     margin-bottom: 0.5rem;
     display: flex;
     align-items: center;
+    font-size: 1.4rem;
 }
 
 .activity-card li img {
@@ -639,15 +674,28 @@ section {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
+    #activities {
+        height: 160vh;
+    }
+}
+
+@media (max-width: 700px) {
     .activity-card {
         flex: 1 1 100%;
         max-width: 100%;
     }
     #activities {
-        height: 212vh;
+        height: 265vh;
     }
 }
+@media (max-height: 730px) {
+    #activities {
+        height: 360vh;
+    }
+}
+
+
 /* Advogados */
 #lawyers {
     text-align: center;
